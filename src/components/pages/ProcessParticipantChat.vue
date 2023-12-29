@@ -28,7 +28,7 @@ import { VectorStorage } from "vector-storage";
 import ChatGenerator from "../ai/ProcessInstanceGenerator.js";
 
 import ChatModule from "../ChatModule.vue";
-import Chat from "../Chat.vue"
+import Chat from "../ui/Chat.vue"
 
 
 export default {

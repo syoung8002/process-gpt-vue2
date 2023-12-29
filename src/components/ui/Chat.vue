@@ -83,8 +83,8 @@
 </template>
 
 <script>
-
 export default {
+    name: 'Chat',
     props: {
         messages: Array,
     },
@@ -131,11 +131,13 @@ export default {
 .user-message {
     border-radius: 20px;
     max-width: 90%;
+    color: #eff4f8;
 }
 
 .system-message {
     border-radius: 20px;
     max-width: 90%;
+    color: #2d2f31;
 }
 
 pre {
@@ -150,7 +152,6 @@ pre {
     overflow-y: auto;
     max-height: calc(100% - 65px);
 }
-
 
 .theme--light > .chat-box {
     background-color: #ffffff;

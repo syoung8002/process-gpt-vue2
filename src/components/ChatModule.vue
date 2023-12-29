@@ -9,6 +9,7 @@ export default {
         generator: null,
         messages: [],
         userInfo: {},
+        chatDialog: false,
     }),
     methods: {
         async init() {
@@ -111,6 +112,10 @@ export default {
     
                 this.messages.push(message);
             }
+        },
+
+        toggleChatDialog() {
+            this.chatDialog = !this.chatDialog;
         },
 
         extractProcessJson(text) {            

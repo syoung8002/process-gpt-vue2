@@ -1,8 +1,5 @@
 <template>
-    <v-navigation-drawer
-            app
-            v-if="drawer"
-    >
+    <v-navigation-drawer app>
         <template v-slot:prepend>
             <v-list-item @click="goHome">
                 <v-list-item-avatar>
@@ -37,12 +34,12 @@
                     color="blue"
                     link
             >
-                <v-list-item-icon>
+                <v-list-item-icon class="mr-5">
                     <v-icon>{{ menu.icon }}</v-icon>
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                    <v-list-item-title class="subtitle-2 font-weight-bold text--primary">
+                    <v-list-item-title class="subtitle-2 font-weight-bold">
                         {{ menu.title }}
                     </v-list-item-title>
                 </v-list-item-content>
@@ -113,5 +110,13 @@ export default {
 
 .theme--dark.v-navigation-drawer {
     background-color: #2d2f31;
+}
+
+.theme--light .subtitle-2 {
+    color: #37474F !important;
+}
+
+.theme--dark .subtitle-2 {
+    color: #eff4f8 !important;
 }
 </style>

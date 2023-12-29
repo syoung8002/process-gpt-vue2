@@ -91,8 +91,4 @@ export default {
 .theme--dark.v-application {
     background-color: #2d2f31;
 }
-
-.theme--light.v-application .text--primary {
-    color: rgba(0, 0, 0, 0.7) !important;
-}
 </style>

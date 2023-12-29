@@ -5,23 +5,13 @@
                 :key="organizationChart.length"
         />
 
-        <Chat :messages="messages"
-                @sendMessage="beforeSendMessage"
-        >
-            <template v-slot:alert>
-                <v-alert :type="alertInfo.type"
-                        colored-border
-                        border="top"
-                >
-                    <div class="subtitle-1">
-                        {{ alertInfo.title }}
-                    </div>
-                    <div class="body-2">
-                        {{ alertInfo.text }}
-                    </div>
-                </v-alert>
-            </template>
-        </Chat>
+        <ChatButton
+                :chatDialog="chatDialog"
+                :messages="messages"
+                :alertInfo="alertInfo"
+                @toggleChatDialog="toggleChatDialog"
+                @beforeSendMessage="beforeSendMessage"
+        ></ChatButton>
     </div>
 </template>
 
@@ -32,13 +22,16 @@ import ChatGenerator from "../ai/OrganizationChartGenerator";
 import OrganizationChart from "../ui/OrganizationChart.vue"
 
 import ChatModule from "../ChatModule.vue";
-import Chat from "../Chat.vue";
+import Chat from "../ui/Chat.vue";
+import ChatButton from "../ui/ChatButton.vue"
 
 export default {
     mixins: [ChatModule],
+    name: "OrganizationChartChat",
     components: {
         OrganizationChart,
-        Chat
+        Chat,
+        ChatButton,
     },
     data: () => ({
         path: "organization",
@@ -47,7 +40,7 @@ export default {
             type: "info",
             title: "조직도 관리",
             text: "대화형으로 조직도를 관리하십시오. 팀(부서) 롤(역할), 직원들을 등록 수정 삭제할 수 있습니다. 예를 들어, '개발팀, 관리팀을 등록하고, 홍길동님을 신입사원으로 관리팀에 등록해줘. 이메일 주소는 new@company.com 이야. 역할은 개발자로 들어오셨어. 관리팀의 팀장은 아무개 팀장님이야.' 와 같은 명령을 할 수 있습니다."
-        }
+        },
     }),
     async created() {
         await this.init();

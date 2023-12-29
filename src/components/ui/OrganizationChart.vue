@@ -1,5 +1,5 @@
 <template>
-    <div id="tree" ref="tree"></div>
+    <div id="tree" ref="tree" class="org-chart"></div>
 </template>
 
 <script>
@@ -33,3 +33,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.org-chart {
+    height: calc(100vh - 112px);
+}
+</style>
