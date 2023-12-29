@@ -1,0 +1,29 @@
+{
+    "include": [
+        "env.d.js",
+        "shims.d.ts",
+        "src/**/*",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "baseUrl": "./",
+        "moduleResolution": "node",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+    }
+}

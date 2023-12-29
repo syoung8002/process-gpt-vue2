@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Process-GPT</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/acebase-client@latest/dist/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        window.$acebase = new AceBaseClient({
+            host: "localhost",
+            port: 5757,
+            dbname: "mydb",
+            https: false,
+        });
+        window.$acebase.ready(() => {
+            console.log("Connected successfully");
+        });
+    </script>
+</body>
+</html>
